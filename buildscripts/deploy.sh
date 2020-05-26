@@ -40,6 +40,8 @@ elif [ "${ARCH}" = "aarch64" ]; then
   UPGRADE_IMG="${IMAGE_ORG}/m-upgrade-arm64"
   PROVISIONER_LOCALPV="${IMAGE_ORG}/provisioner-localpv-arm64"
   CVC_OPERATOR_IMG="${IMAGE_ORG}/cvc-operator-arm64"
+elif [ "${ARCH}" = "ppc64le" ]; then
+  PROVISIONER_LOCALPV="${IMAGE_ORG}/provisioner-localpv-ppc64le"
 fi
 
 # tag and push all the images
