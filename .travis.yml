@@ -21,6 +21,10 @@ jobs:
       arch: arm64
       env:
         - RELEASE_TAG_DOWNSTREAM=0
+    - os: linux
+      arch: ppc64le
+      env:
+        - RELEASE_TAG_DOWNSTREAM=0
 
 services:
   - docker
