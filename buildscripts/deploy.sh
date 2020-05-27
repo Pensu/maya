@@ -47,7 +47,7 @@ fi
 # tag and push all the images
 if [ "${ARCH}" = "ppc64le" ]; then
   DIMAGE="${PROVISIONER_LOCALPV}" ./buildscripts/push
-elif
+else
   DIMAGE="${APISERVER_IMG}" ./buildscripts/push
   DIMAGE="${M_EXPORTER_IMG}" ./buildscripts/push
   DIMAGE="${CSTOR_POOL_MGMT_IMG}" ./buildscripts/push
