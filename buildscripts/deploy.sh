@@ -45,13 +45,17 @@ elif [ "${ARCH}" = "ppc64le" ]; then
 fi
 
 # tag and push all the images
-#DIMAGE="${APISERVER_IMG}" ./buildscripts/push
-#DIMAGE="${M_EXPORTER_IMG}" ./buildscripts/push
-#DIMAGE="${CSTOR_POOL_MGMT_IMG}" ./buildscripts/push
-#DIMAGE="${CSPI_MGMT_IMG}" ./buildscripts/push
-#DIMAGE="${CSTOR_VOLUME_MGMT_IMG}" ./buildscripts/push
-#DIMAGE="${ADMISSION_SERVER_IMG}" ./buildscripts/push
-#DIMAGE="${CSPC_OPERATOR_IMG}" ./buildscripts/push
-#DIMAGE="${UPGRADE_IMG}" ./buildscripts/push
-DIMAGE="${PROVISIONER_LOCALPV}" ./buildscripts/push
-#DIMAGE="${CVC_OPERATOR_IMG}" ./buildscripts/push
+if [ "${ARCH}" = "ppc64le" ]; then
+  DIMAGE="${PROVISIONER_LOCALPV}" ./buildscripts/push
+elif
+  DIMAGE="${APISERVER_IMG}" ./buildscripts/push
+  DIMAGE="${M_EXPORTER_IMG}" ./buildscripts/push
+  DIMAGE="${CSTOR_POOL_MGMT_IMG}" ./buildscripts/push
+  DIMAGE="${CSPI_MGMT_IMG}" ./buildscripts/push
+  DIMAGE="${CSTOR_VOLUME_MGMT_IMG}" ./buildscripts/push
+  DIMAGE="${ADMISSION_SERVER_IMG}" ./buildscripts/push
+  DIMAGE="${CSPC_OPERATOR_IMG}" ./buildscripts/push
+  DIMAGE="${UPGRADE_IMG}" ./buildscripts/push
+  DIMAGE="${PROVISIONER_LOCALPV}" ./buildscripts/push
+  DIMAGE="${CVC_OPERATOR_IMG}" ./buildscripts/push
+fi
